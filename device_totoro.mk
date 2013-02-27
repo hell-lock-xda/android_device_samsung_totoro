@@ -21,14 +21,14 @@ $(call inherit-product, build/target/product/languages_full.mk)
 $(call inherit-product, build/target/product/full_base.mk)
 
 # Add device package overlay
-DEVICE_PACKAGE_OVERLAYS += device/samsung/totoroe/overlay
+DEVICE_PACKAGE_OVERLAYS += device/samsung/totoro/overlay
 PRODUCT_PACKAGE_OVERLAYS += vendor/cyanogen/overlay/mdpi
 
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
-# Add LDPI assets, in addition to MDPI
-    PRODUCT_LOCALES += ldpi mdpi
+# Add LDPI assets, in addition to LDPI
+    PRODUCT_LOCALES += ldpi
 
 # Kernel modules
 PRODUCT_COPY_FILES += \
@@ -49,7 +49,7 @@ PRODUCT_COPY_FILES += \
 
 # Bootanimation
 PRODUCT_COPY_FILES += \
-    vendor/cyanogen/prebuilt/mdpi/media/bootanimation.zip:system/media/bootanimation.zip
+    vendor/cyanogen/prebuilt/ldpi/media/bootanimation.zip:system/media/bootanimation.zip
 
 # Other kernel modules not in ramdisk
 ifeq ($(TARGET_PREBUILT_KERNEL),)
